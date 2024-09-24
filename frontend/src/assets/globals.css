@@ -1,0 +1,11 @@
+@import "./tailwind.css";
+@import "./fonts.css";
+
+body {
+  font-family: 'KakaoRegular', sans-serif;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-navigation-size: 25px;
+}
