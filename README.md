@@ -92,7 +92,7 @@
 * @RestControllerAdvice와 @ExceptionHandler를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리
 * 애플리케이션의 다양한 예외 상황에 맞춰 적절한 HTTP 상태 코드와 상세한 오류 메시지를 반환하도록 설계
   
-## JWT 인증 방식 시큐리티 동작 원리 
+## JWT 인증 방식 시큐리티 동작 원리 [링크](https://bottlenose-asparagus-798.notion.site/JWT-1-1a81bba98c5780ca8818c23b7f79f739)
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2e9fe005-ce39-4061-9afe-f6b7d6f4e16e" width="800" alt="로그인 흐름">
@@ -109,7 +109,7 @@
 3.  **SecurityContextHolder에 인증 정보 저장**
     * SecurityContextHolder.getContext()에 인증 정보를 저장하여 후속 필터 및 비즈니스 로직에서 인증 상태를 활용
   
-## OAuth 2.0 소셜 로그인 흐름
+## OAuth 2.0 소셜 로그인 흐름 [링크](https://bottlenose-asparagus-798.notion.site/JWT-1-1a81bba98c5780ca8818c23b7f79f739](https://bottlenose-asparagus-798.notion.site/OAuth-2-0-1-1a81bba98c578094ad49e59873a7c44f)
 <p align="center"><img width="951" height="558" alt="image" src="https://github.com/user-attachments/assets/b5aab28a-dad4-4551-81e9-20bab568f1d5" /></p>
 
 1.  **사용자 요청 및 리다이렉션**
