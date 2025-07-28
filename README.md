@@ -8,17 +8,18 @@
 - **팀원**: 이병훈 - 백엔드
 
 ## ⚙️ 사용된 기술
-- **Java**: 서버 사이드 애플리케이션 개발
-- **Spring Boot**: 애플리케이션의 빠른 설정과 개발을 위한 프레임워크
-- **Spring Data JPA**: 데이터베이스와의 상호작용을 위한 ORM
-- **Spring Security**: 안전한 인증 및 권한 관리를 위한 보안 프레임워크
-- **MySQL**: 데이터 저장을 위한 관계형 데이터베이스
+- Java
+- Spring Boot, Spring Security, Spring Data JPA, Spring Cloud Eureka
+- JWT, OAuth2
+- MySQL
 
 <br/>
 
 # 💡 주요 기능
 
 ## 회원가입
+<img width="705" height="832" alt="image" src="https://github.com/user-attachments/assets/834b9e23-a470-416c-b6bd-230efd731e14" />
+
 - OAuth2 방식을 사용하여 JWT를 이용한 회원가입 기능을 구현하였습니다.
 - 모든 회원가입 로직은 백엔드에서 처리하여 데이터의 일관성과 보안을 강화하였습니다.
 
