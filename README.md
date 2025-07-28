@@ -26,12 +26,10 @@
     <td width="50%">
       <p><b>회원가입</b></p>
       <ul>
-        <li>Spring Security를 활용하여 안전한 사용자 인증 시스템을 구축</li>
-        <li>사용자 비밀번호는 BCryptPasswordEncoder를 사용하여 암호화 처리</li>
-        <li>회원가입 시 @Valid로 검증 후 이메일/닉네임 중복 검증 로직을 추가</li>
-        <li>Nurigo (Coolsms API) 연동을 통해 휴대폰 SMS 인증 번호 발송 기능을 구현</li>
-        <li>Redis를 활용하여 SMS 인증 번호의 유효 시간을 관리(TTL 5분)하고, 빠른 조회 및 보안성을 확보</li> 
-        <li>(난수 생성에는 SecureRandom 사용)</li>
+        <li>Spring Security 기반의 인증 시스템을 구축</li>
+        <li>BCryptPasswordEncoder를 이용한 비밀번호 암호화 및 이메일/닉네임 중복 검증을 통해 보안을 강화했습니다.</li>
+        <li>Nurigo (Coolsms API) 연동으로 SMS 인증 번호 발송 기능을 구현</li>
+        <li>Redis를 활용하여 인증 번호의 유효 시간을 관리(TTL 5분)하고, 효율성 및 보안성을 확보</li> 
       </ul>
     </td>
   </tr>
