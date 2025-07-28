@@ -109,7 +109,7 @@
 3.  **SecurityContextHolder에 인증 정보 저장**
     * SecurityContextHolder.getContext()에 인증 정보를 저장하여 후속 필터 및 비즈니스 로직에서 인증 상태를 활용
   
-## OAuth 2.0 소셜 로그인 흐름 [링크](https://bottlenose-asparagus-798.notion.site/JWT-1-1a81bba98c5780ca8818c23b7f79f739](https://bottlenose-asparagus-798.notion.site/OAuth-2-0-1-1a81bba98c578094ad49e59873a7c44f)
+## OAuth 2.0 소셜 로그인 흐름 [링크](https://bottlenose-asparagus-798.notion.site/OAuth-2-0-1-1a81bba98c578094ad49e59873a7c44f)
 <p align="center"><img width="951" height="558" alt="image" src="https://github.com/user-attachments/assets/b5aab28a-dad4-4551-81e9-20bab568f1d5" /></p>
 
 1.  **사용자 요청 및 리다이렉션**
@@ -122,6 +122,34 @@
 3.  **JWT 발급 및 로그인 완료**
     * 획득한 사용자 정보를 바탕으로 프로젝트의 로그인 절차를 진행
     * 최종적으로, 프로젝트의 인증 시스템에 맞는 JWT(Access/Refresh Token)를 발급하여 클라이언트에게 전송함으로써 로그인을 완료
+  
+## 🛠️ 트러블슈팅 내용
+
+### 문제 상황
+
+1. 소셜 로그인 구현 시, 일반 로그인처럼 엑세스토큰과 리프레시토큰을 HTTP 응답 헤더로 받으려 했습니다.
+2. 그러나 하이퍼링크로 리다이렉션되는 과정에서 요청 헤더에 직접 접근할 수 없는 상황이 발생했습니다.
+3. 이로 인해 JWTFilter는 요청 헤더에서 받은 엑세스 쿠키로 인증을 하게 되었고, 이로 인해 일관성이 떨어지는 문제가 발생했습니다.
+
+### 해결 방안
+
+1. 쿠키를 통해 JWT토큰을 전송
+2. 쿠키에 있는 엑세스토큰을 응답 헤더로 변환
+3. 로컬 스토리지에 엑세스토큰 저장
+    
+    ![이병훈](https://qudgns8883.github.io/assets/img/OAuth2.png)
+    
+
+### 결론
+
+1. 소셜 로그인 과정에서 하이퍼링크로 인한 리다이렉션 문제 때문에, 쿠키를 사용해 토큰을 전송하는 방식을 선택했습니다.
+2. HttpOnly설정으로 쿠키에 엑세스토큰을 저장할 수 없었고, 엑세스 토큰 변환 후 요청헤드로 클라이언트에 전달함으로써 JWTFilter의 일관성을 유지했습니다.
+
+### 느낀 점
+
+1. JWT 토큰을 활용하여 쿠키와 요청 헤더를 조합한 인증 방식이 효과적이라는 것을 깨달았습니다.
+2. HttpOnly 속성의 중요성을 통해 XSS 공격 방어를 강화할 수 있음을 배웠고, CSP(Content Security Policy)와 로컬 스토리지로 클라이언트 측 보안을 높일 수 있었습니다.
+3. 이번 경험을 통해 웹 보안의 중요성을 이해하게 되었고, 앞으로 JWT를 활용해 안전하고 효율적인 시스템을 구축하는 데 기여하고 싶습니다.
 
 
 
