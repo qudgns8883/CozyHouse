@@ -18,13 +18,23 @@
 # 💡 주요 기능
 
 ## 회원가입
-<img width="369" height="517" alt="image" src="https://github.com/user-attachments/assets/3ddb02fe-ec41-4c82-a0a3-93f3a100bc7e" />
-
-Spring Security를 활용하여 안전한 사용자 인증 시스템을 구축했습니다.
-사용자 비밀번호는 BCryptPasswordEncoder를 사용하여 암호화 처리했습니다.
-회원가입 시 이메일/닉네임 중복 검증 로직을 추가했습니다.
-Nurigo (Coolsms API) 연동을 통해 휴대폰 SMS 인증 번호 발송 기능을 구현했습니다.
-Redis를 활용하여 SMS 인증 번호의 유효 시간을 관리(TTL 5분)하고, 빠른 조회 및 보안성을 확보했습니다. (난수 생성에는 SecureRandom 사용)
+<table>
+  <tr>
+    <td width="50%">
+      <img width="369" alt="회원가입 화면" src="https://github.com/user-attachments/assets/3ddb02fe-ec41-4c82-a0a3-93f3a100bc7e" />
+    </td>
+    <td width="50%">
+      <p><b>회원가입</b></p>
+      <ul>
+        <li>Spring Security를 활용하여 안전한 사용자 인증 시스템을 구축했습니다.</li>
+        <li>사용자 비밀번호는 BCryptPasswordEncoder를 사용하여 암호화 처리했습니다.</li>
+        <li>회원가입 시 이메일/닉네임 중복 검증 로직을 추가했습니다.</li>
+        <li>Nurigo (Coolsms API) 연동을 통해 휴대폰 SMS 인증 번호 발송 기능을 구현했습니다.</li>
+        <li>Redis를 활용하여 SMS 인증 번호의 유효 시간을 관리(TTL 5분)하고, 빠른 조회 및 보안성을 확보했습니다. (난수 생성에는 SecureRandom 사용)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## 로그인, 소셜로그인, 로그아웃
 - OAuth2 방식으로 로그인 및 소셜 로그인 기능을 구현하였습니다.
