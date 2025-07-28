@@ -54,9 +54,31 @@
   </tr>
 </table>
 
+
+## 메인화면
+<img width="1252" height="484" alt="image" src="https://github.com/user-attachments/assets/b7a12cbd-4a9d-4ba5-8939-7d810be2c137" />
+
+
 ## 전역 예외 처리
 * `@RestControllerAdvice`와 `@ExceptionHandler`를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리
 * 애플리케이션의 다양한 예외 상황에 맞춰 적절한 HTTP 상태 코드와 상세한 오류 메시지를 반환하도록 설계
 
 ## 글쓰기
-- 파일 업로드를 위해 MultiparFile와 Java NIO를 사용하여 처리합니다.
+<table>
+  <tr>
+    <td width="50%">
+      <img width="981" height="334" alt="image" src="https://github.com/user-attachments/assets/e608a7a4-7999-44df-af88-89d69bdabbc7" />
+      <img width="981" height="334" alt="image" src="https://github.com/user-attachments/assets/e608a7a4-7999-44df-af88-89d69bdabbc7" />
+    </td>
+    <td width="50%">
+      <p><b>글쓰기</b></p>
+      <ul>
+        <li>텍스트와 다중 이미지/영상을 함께 업로드하는 기능을 구현했습니다. 파일 처리 로직을 별도로 분리하고, 보안 및 데이터 일관성을 고려하여 설계</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+
