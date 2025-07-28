@@ -98,8 +98,6 @@
   <img src="https://github.com/user-attachments/assets/2e9fe005-ce39-4061-9afe-f6b7d6f4e16e" width="800" alt="로그인 흐름">
 </p>
 
-**동작 원리**
-
 1.  **Spring Security 기반의 커스텀 인증 필터**
     * 기존의 UsernamePasswordAuthenticationFilter를 커스터마이징하여 REST API에 적합한 로그인 방식을 구현
     * 클라이언트 요청에서 사용자 이름과 비밀번호를 추출해 UsernamePasswordAuthenticationToken을 생성하고 AuthenticationManager로 전달
