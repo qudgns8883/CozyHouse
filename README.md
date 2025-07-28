@@ -100,41 +100,29 @@
 
 **동작 원리**
 
-1.  **Spring Security 기반의 커스텀 인증 필터**:
-    * 기존의 UsernamePasswordAuthenticationFilter를 커스터마이징하여 REST API에 적합한 로그인 방식을 구현합니다.
-    * 클라이언트 요청에서 사용자 이름과 비밀번호를 추출해 UsernamePasswordAuthenticationToken을 생성하고 AuthenticationManager로 전달합니다.
+1.  **Spring Security 기반의 커스텀 인증 필터**
+    * 기존의 UsernamePasswordAuthenticationFilter를 커스터마이징하여 REST API에 적합한 로그인 방식을 구현
+    * 클라이언트 요청에서 사용자 이름과 비밀번호를 추출해 UsernamePasswordAuthenticationToken을 생성하고 AuthenticationManager로 전달
 
-2.  **JWT 기반 토큰 발급**:
+2.  **JWT 기반 토큰 발급**
     * 인증에 성공하면, successfulAuthentication 메서드에서 jwtUtil을 활용해 Access Token과 Refresh Token을 생성합니다.
-    * 생성된 JWT는 클라이언트에 응답으로 반환되어, 이후 요청의 인증 수단으로 사용됩니다.
+    * 생성된 JWT는 클라이언트에 응답으로 반환되어, 이후 요청의 인증 수단으로 사용
 
-3.  **SecurityContextHolder에 인증 정보 저장**:
-    * SecurityContextHolder.getContext()에 인증 정보를 저장하여, 후속 필터 및 비즈니스 로직에서 인증 상태를 활용할 수 있습니다.
+3.  **SecurityContextHolder에 인증 정보 저장**
+    * SecurityContextHolder.getContext()에 인증 정보를 저장하여, 후속 필터 및 비즈니스 로직에서 인증 상태를 활용
   
 ## OAuth 2.0 소셜 로그인 흐름
 <img width="951" height="558" alt="image" src="https://github.com/user-attachments/assets/b5aab28a-dad4-4551-81e9-20bab568f1d5" />
-1. 프론트에서 로그인 버튼을 클릭
-    - 사용자가 소셜 로그인 버튼을 클릭하여 로그인 절차를 시작합니다.
-2. 소셜 로그인 시도
-    - /oauth2/authorization/서비스명 경로로 소셜 로그인 요청이 전송됩니다.
-3. Spring 서버에서 OAuth 요청 처리
-    - Spring 내부의 OAuth2AuthorizationRequestRedirectFilter가 요청을 가로채고 외부 인증 서버로 리다이렉트합니다.
-4. 인증 서버에서 로그인 페이지 반환
-    - 인증 서버가 서비스 로그인 페이지를 사용자에게 응답합니다.
-5. 로그인 성공 시 코드 반환
-    - 로그인 성공 후 인증 서버가 리다이렉트 주소로 코드(Authorization Code)를 반환합니다. 이 코드를 사용해 엑세스 토큰을 요청합니다.
-6. /login/oauth2/code/서비스 경로로 요청
-    - 이 코드는 /login/oauth2/code/서비스 경로로 전달되는 것이 관습
-7. Oauth2LoginAuthenticationFilter에서 요청 가로챔
-    - 해당 요청은 Oauth2LoginAuthenticationFilter에서 처리됩니다.
-8. Oauth2LoginAuthenticationProvider에서 Access 토큰 발급
-    - Oauth2LoginAuthenticationProvider가 요청에 있는 코드를 사용해 인증 서버에서 Access 토큰을 발급받습니다
-9. Access 토큰으로 리소스 서버에 접근
-    - Access 토큰을 사용해 리소스 서버에서 유저 정보를 획득합니다.
-10. OAuth2Service에서 유저 정보 처리
-    - 획득한 유저 정보를 OAuth2Service에서 처리하고, 이를 OAuth2User 객체에 담아 로그인을 진행합니다.
-11. JWT 발급
-    - 로그인 성공 후, LoginSuccessHandler에서 JWT를 발급하여 클라이언트에 전송합니다.
+1. **사용자 요청 및 리다이렉션**
+*사용자가 소셜 로그인 버튼을 클릭하면, Spring 서버가 요청을 가로채 해당 소셜 서비스의 로그인 페이지로 사용자를 자동으로 리다이렉트
+
+2. **인증 코드 획득 및 토큰 발급**
+*사용자가 소셜 서비스에서 로그인을 성공하면, 소셜 서비스는 프로젝트로 **인증 코드(Authorization Code)**를 반환
+*Spring Security는 이 코드를 사용해 소셜 서비스로부터 Access Token과 사용자 정보를 획득
+
+3. **JWT 발급 및 로그인 완료**
+*획득한 사용자 정보를 바탕으로 프로젝트의 로그인 절차를 진행
+*최종적으로, 우리 프로젝트의 인증 시스템에 맞는 **JWT(Access/Refresh Token)**를 발급하여 클라이언트에게 전송함으로써 로그인을 완료
 
 
 
