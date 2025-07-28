@@ -56,12 +56,20 @@
 
 
 ## 메인화면
-<img width="1252" height="484" alt="image" src="https://github.com/user-attachments/assets/b7a12cbd-4a9d-4ba5-8939-7d810be2c137" />
-
-
-## 전역 예외 처리
-* `@RestControllerAdvice`와 `@ExceptionHandler`를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리
-* 애플리케이션의 다양한 예외 상황에 맞춰 적절한 HTTP 상태 코드와 상세한 오류 메시지를 반환하도록 설계
+<table>
+  <tr>
+    <td width="50%">
+      <img width="1252" height="484" alt="image" src="https://github.com/user-attachments/assets/b7a12cbd-4a9d-4ba5-8939-7d810be2c137" />
+    </td>
+    <td width="50%">
+      <p><b>로그인 후 메인화면</b></p>
+      <ul>
+        <li>API 호출 시 Access Token이 만료되면 Refresh Token으로 새로운 Access Token을 재발급</li>
+        <li>이 과정에서 기존 Refresh Token은 폐기되고, 새로운 Refresh Token이 발급되어 보안을 강화</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## 글쓰기
 <table>
@@ -80,6 +88,9 @@
   </tr>
 </table>
 
+## 전역 예외 처리
+* `@RestControllerAdvice`와 `@ExceptionHandler`를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리
+* 애플리케이션의 다양한 예외 상황에 맞춰 적절한 HTTP 상태 코드와 상세한 오류 메시지를 반환하도록 설계
 
 
 
