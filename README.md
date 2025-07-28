@@ -9,7 +9,7 @@
 
 ## ⚙️ 사용된 기술
 - Java
-- Spring Boot, Spring Security, Spring Data JPA, Spring Cloud Eureka
+- Spring Boot, Spring Security, Spring Data JPA
 - JWT, OAuth2
 - MySQL
 
@@ -89,7 +89,7 @@
 </table>
 
 ## 전역 예외 처리
-* `@RestControllerAdvice`와 `@ExceptionHandler`를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리
+* @RestControllerAdvice와 @ExceptionHandler를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리
 * 애플리케이션의 다양한 예외 상황에 맞춰 적절한 HTTP 상태 코드와 상세한 오류 메시지를 반환하도록 설계
 
 
