@@ -55,8 +55,8 @@
 </table>
 
 ## 전역 예외 처리
-* `@RestControllerAdvice`와 `@ExceptionHandler`를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리합니다.
-* 애플리케이션의 다양한 예외 상황에 맞춰 적절한 HTTP 상태 코드와 상세한 오류 메시지를 반환하도록 설계했습니다.
+* `@RestControllerAdvice`와 `@ExceptionHandler`를 활용해 애플리케이션 전반에 발생하는 모든 예외를 중앙에서 처리
+* 애플리케이션의 다양한 예외 상황에 맞춰 적절한 HTTP 상태 코드와 상세한 오류 메시지를 반환하도록 설계
 
 ## 글쓰기
 - 파일 업로드를 위해 MultiparFile와 Java NIO를 사용하여 처리합니다.
