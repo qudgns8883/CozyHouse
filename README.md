@@ -94,23 +94,22 @@
   
 ## JWT 인증 방식 시큐리티 동작 원리 
 
-<table>
-  <tr>
-    <td width="50%">
-        <img width="951" height="558" alt="image" src="https://github.com/user-attachments/assets/2e9fe005-ce39-4061-9afe-f6b7d6f4e16e" />
-    </td>
-    <td width="50%">
-      <p><b>글쓰기</b></p>
-      <ul>
-        <li>1. Spring Security기반의 커스텀 인증 필터 : 기존의 UsernamePasswordAuthenticationFilter를 직접 커스터마이징하여 REST API 환경에 적합한 로그인 인증 방식을 구현</li>
-        <li>클라이언트로부터 받은 사용자 이름과 비밀번호를 기반으로 UsernamePasswordAuthenticationToken을 생성하고, AuthenticationManager를 통해 인증을 진행합니다.</li>
-        <li>2. JWT 기반의 토큰 발급 : 인증이 성공하면, successfulAuthentication 메서드에서 jwtUtil을 활용하여 Access Token과 Refresh Token을 생성</li>
-        <li>발급된 JWT는 클라이언트에 응답으로 반환되며, 클라이언트는 이를 저장하여 이후의 모든 요청에 대한 인증 수단으로 사용</li>
-         <li>3. SecurityContextHolder에 인증 정보 저장 : SecurityContextHolder.getContext()에 인증 정보를 저장하여, 이후 필터 체인 및 비즈니스 로직에서 해당 사용자의 인증 상태를 활용</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2e9fe005-ce39-4061-9afe-f6b7d6f4e16e" width="800" alt="로그인 흐름">
+</p>
+
+**동작 원리**
+
+1.  **Spring Security 기반의 커스텀 인증 필터**:
+    * 기존의 `UsernamePasswordAuthenticationFilter`를 커스터마이징하여 REST API에 적합한 로그인 방식을 구현합니다.
+    * 클라이언트 요청에서 사용자 이름과 비밀번호를 추출해 `UsernamePasswordAuthenticationToken`을 생성하고 `AuthenticationManager`로 전달합니다.
+
+2.  **JWT 기반 토큰 발급**:
+    * 인증에 성공하면, `successfulAuthentication` 메서드에서 `jwtUtil`을 활용해 Access Token과 Refresh Token을 생성합니다.
+    * 생성된 JWT는 클라이언트에 응답으로 반환되어, 이후 요청의 인증 수단으로 사용됩니다.
+
+3.  **SecurityContextHolder에 인증 정보 저장**:
+    * `SecurityContextHolder.getContext()`에 인증 정보를 저장하여, 후속 필터 및 비즈니스 로직에서 인증 상태를 활용할 수 있습니다.
 
 1. Spring Security 기반의 커스텀 인증 필터
 기존의 UsernamePasswordAuthenticationFilter를 직접 커스터마이징하여 REST API 환경에 적합한 로그인 인증 방식을 구현했습니다.
