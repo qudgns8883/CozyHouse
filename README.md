@@ -18,7 +18,8 @@
 # 💡 주요 기능
 
 ## 회원가입
-<img width="705" height="832" alt="image" src="https://github.com/user-attachments/assets/834b9e23-a470-416c-b6bd-230efd731e14" />
+<img width="369" height="517" alt="image" src="https://github.com/user-attachments/assets/3ddb02fe-ec41-4c82-a0a3-93f3a100bc7e" />
+
 
 - OAuth2 방식을 사용하여 JWT를 이용한 회원가입 기능을 구현하였습니다.
 - 모든 회원가입 로직은 백엔드에서 처리하여 데이터의 일관성과 보안을 강화하였습니다.
