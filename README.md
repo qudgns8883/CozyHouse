@@ -45,10 +45,10 @@
     <td width="50%">
       <p><b>로그인, 소셜로그인, 로그아웃</b></p>
       <ul>
-        <li>**JWT 기반 인증 시스템:** Spring Security를 활용하여 JWT(Access/Refresh Token) 기반의 인증 시스템을 구축했습니다.</li>
-        <li>**OAuth 2.0 소셜 로그인:** Google, Kakao 등 소셜 계정으로 간편하게 로그인할 수 있는 기능을 구현했습니다.</li>
-        <li>**보안 강화:** Refresh Token Rotation 전략을 적용하여 토큰 탈취 시 피해를 최소화하고, 로그인 및 소셜 로그인 모두 동일한 인증 로직을 사용하도록 설계했습니다.</li>
-        <li>**로그아웃:** Refresh Token을 DB에서 삭제하고 쿠키를 무효화하여 토큰 재사용을 방지합니다.</li>
+        <li>JWT 기반 인증 시스템: Spring Security를 활용하여 JWT(Access/Refresh Token) 기반의 인증 시스템을 구축</li>
+        <li>OAuth 2.0 소셜 로그인: Google, Kakao 등 소셜 계정으로 간편하게 로그인할 수 있는 기능을 구현</li>
+        <li>보안 강화: Refresh Token Rotation 전략을 적용하여 토큰 탈취 시 피해를 최소화하고, 로그인 및 소셜 로그인 모두 동일한 인증 로직을 사용하도록 설계</li>
+        <li>로그아웃: Refresh Token을 DB에서 삭제하고 쿠키를 무효화하여 토큰 재사용을 방지</li>
       </ul>
     </td>
   </tr>
