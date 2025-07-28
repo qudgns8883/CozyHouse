@@ -69,6 +69,7 @@
     <td width="50%">
       <img width="981" height="334" alt="image" src="https://github.com/user-attachments/assets/e608a7a4-7999-44df-af88-89d69bdabbc7" />
       <img width="976" height="452" alt="image" src="https://github.com/user-attachments/assets/78a67381-903a-4f93-86f2-9a7e0fe93260" />
+      <img width="954" height="510" alt="image" src="https://github.com/user-attachments/assets/ded8e75a-4657-4739-994a-04d3fd616178" />
     </td>
     <td width="50%">
       <p><b>글쓰기</b></p>
